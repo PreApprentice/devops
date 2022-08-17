@@ -1,0 +1,23 @@
+syntax = "proto3";
+package user.service.v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "api/user/service/v1:v1";
+
+service User {
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {
+    // 方便测试 这里还是生成HTTP接口
+
+  }
+}
+
+message CreateUserRequest {
+  string username=1;
+  string password=2;
+}
+
+message CreateUserResponse{
+  int64 id = 1;
+  string username = 2;
+}
